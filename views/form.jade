@@ -1,0 +1,24 @@
+extends layout
+
+block content 
+    h1 Add A New Message 
+    form(method='POST', action='/new')
+        label(for='authorName') 
+            | User:
+        input(
+            type='text'
+            name='authorName'
+            required
+        )
+        label(for='message')
+            | Message:
+        textarea(
+            name="message"
+            cols="30"
+            rows="10"
+        )
+        div.controls 
+            button(type='submit')
+                | submit
+            a(href='/')
+                | cancel

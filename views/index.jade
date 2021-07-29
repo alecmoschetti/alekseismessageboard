@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  h4 Welcome to #{title}
+  a(href='/new') Post Message
+  ul 
+    each message in messages 
+      - let date_added = message.added.toString().substring(0, 25)
+      li
+          h5 User: #{message.user}
+          p #{message.text}
+          p.timestamp Posted on: #{date_added}
+    else 
+      li There are no values
